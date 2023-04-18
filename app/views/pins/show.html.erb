@@ -1,0 +1,68 @@
+<%# <p style="color: green"><%= notice</p>  %>
+
+<%# <%= render @pin %>
+
+
+  <%# <p> %>
+    <%# <%= @pin.description %>
+  <%# </p> %>
+
+  <%# <% if @pin.pin_image.attached? %>
+    <%# <%= image_tag(@pin.pin_image, width:"90%") %>
+  <%# <% end %>
+
+
+<%# <% if @pin.user == current_user %>
+<%# <div> %>
+  <%# <%= link_to "Edit this pin", edit_pin_path(@pin) %>
+  <%# <%= link_to "Back to pins", pins_path %>
+
+  <%# <%= button_to "Destroy this pin", @pin, method: :delete %>
+<%# </div> %>
+<%# <% end %>
+
+<%# <% content_for :head do %>
+  <%# <%= javascript_importmap_tags%>
+  <%# <%= javascript_import_module_tag "scroll" %>
+<%# <% end %>
+
+<div class="container_photo_page">
+  <div class="band">
+    <div class="item-1">
+      <div class="card">
+        <article>
+          <h1><%= @pin.description%></h1>
+          <span><%= @pin.user.username %></span>
+        </article>
+        <div class="thumb">
+          <% if @pin.pin_image.attached? %>
+            <%= image_tag(@pin.pin_image, width:"100%") %>
+          <% end %>
+        </div>
+        <article>
+          <% if @pin.user == current_user %>
+            <div>
+              <%= link_to "Edit this pin", edit_pin_path(@pin)%>
+              <%# <%= link_to "Back to pins", pins_path%>
+              <%= button_to "Destroy this pin", @pin, method: :delete %>
+            </div>
+          <% end %>
+          <%= link_to "Back to pins", pins_path%>
+        </article>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="scroll_up">
+		<svg class="scroll_up_svg" viewbox="-2 -2 52 52">
+			<path
+				class="scroll_up_svg_path"
+				d="
+				M24,0
+				a24,24 0 0,1 0,48
+				a24,24 0 0,1 0,-48
+				"
+			/>
+		</svg>
+	</div>

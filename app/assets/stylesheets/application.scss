@@ -1,0 +1,220 @@
+@import "bootstrap";
+
+// Стилі сітки картинок
+.pin_container{
+    width: 100%;
+    columns: 200px;
+    column-gap: 15px;
+    padding: 10px 15px 0px 15px;
+}
+
+.pin_img{
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all .400s ease;
+
+    position: relative;
+}
+
+.pin_img:hover{
+    transform: scale(1.1);
+}
+
+.html{
+    overflow-x: hidden;
+}
+
+.pin_user_content{
+  display: none;
+  opacity: 0;
+  transition: all .300s ease;
+  color: white;
+  font: 600 1.125rem Tahoma;
+  padding: 0.3rem;
+  z-index: 30;
+}
+
+.pin_img:hover .pin_user_content{
+  display: block;
+  position: absolute;
+  top: 0;
+  opacity: 1;
+}
+
+.pin_content{
+    display: none;
+    opacity: 0;
+    transition: all .300s ease;
+    color: white;
+    font: 300 1.125rem Tahoma;
+    padding: 0.4rem;
+    z-index: 30;
+}
+
+.pin_img:hover .pin_content{
+    display: block;
+    position: absolute;
+    bottom: 0;
+    opacity: 1;
+}
+
+.pin_img::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+    z-index: 20;
+    display: none;
+}
+
+.pin_img:hover::after{
+    display: block;
+}
+
+// Прокрутка на верх
+.scroll_up{
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    z-index: 1000;
+    width: 50px;
+    height: 50px;
+    color: #777373;
+    cursor: pointer;
+    visibility: hidden;
+    border-radius: 50px;
+    box-shadow: inset 0 0 0 4px #777373;
+    opacity: 0;
+    transition: .2s;
+    transform: translateY(25px);
+}
+
+.scroll_up::before{
+    position: absolute;
+    top: -3px;
+    left: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+    width: 100%;
+    height: 100%;
+    font-size: 40px;
+    content: '↑';
+}
+
+.scroll_up:hover {
+	// color: #daf159;
+	color: #ffc107;
+}
+
+.scroll_up_active {
+	visibility: visible;
+	opacity: 1;
+	transform: translateY(0);
+
+	transition: .3s linear;
+}
+
+// .scroll_up_svg{
+
+// }
+
+.scroll_up_svg_path{
+	box-sizing: border-box;
+	fill: none;
+	stroke: #ffc107;
+	stroke-width: 4px;
+	transition: .2s;
+}
+
+
+// сторінка з фото
+.container_photo_page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // height: 20vh;
+}
+
+// .container_photo{
+//     max-width: 80%;
+//     height: 80%;
+// }
+
+.band {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    height: 100%;
+    max-height: 100px;
+}
+
+  .card {
+    background: white;
+    text-decoration: none;
+    color: #444;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+
+    // sets up hover state
+    position: relative;
+    top: 0;
+    transition: all .1s ease-in;
+
+    &:hover {
+      top: -2px;
+      box-shadow: 0 4px 5px rgba(0,0,0,0.2);
+    }
+
+    article {
+      padding: 20px;
+      flex: 1;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    h1 {
+      font-size: 20px;
+      margin: 0;
+      color: #333;
+    }
+
+    p {
+      flex: 1;
+      line-height: 1.4;
+    }
+
+    span {
+      font-size: 12px;
+      font-weight: bold;
+      color: #999;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      margin: 2em 0 0 0;
+    }
+
+    .thumb {
+    //   padding-bottom: 60%;
+      background-size: cover;
+      background-position: center center;
+    }
+  }
+
+  .item-1 {
+    @media (min-width: 60em) {
+      grid-column: 1 / span 2;
+
+      h1 {
+        font-size: 24px;
+      }
+    }
+  }

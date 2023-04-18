@@ -1,0 +1,40 @@
+
+<%# <h1>Pins</h1> %>
+
+<%# <div id="pins"> %>
+  <%# <% @pins.each do |pin| %>
+    <%# <%= render pin %>
+    <%# <p> %>
+      <%# <%= link_to "Show this pin", pin %>
+    <%# </p> %>
+  <%# <% end %>
+<%# </div> %>
+
+<main class="pin_container">
+  <% @pins.shuffle.each do |pin| %>
+  <%= link_to pin do %>
+    <div class="pin_img">
+      <%= image_tag(pin.pin_image, class:"img-responsive", width: '100%') %>
+        <div class="pin_user_content">
+          <p><%= pin.user.username %></p>
+        </div>
+        <div class="pin_content">
+          <p><%= pin.description%></p>
+        </div>
+    </div>
+    <% end %>
+  <% end %>
+
+  <div class="scroll_up">
+		<svg class="scroll_up_svg" viewbox="-2 -2 52 52">
+			<path
+				class="scroll_up_svg_path"
+				d="
+				M24,0
+				a24,24 0 0,1 0,48
+				a24,24 0 0,1 0,-48
+				"
+			/>
+		</svg>
+	</div>
+</main>

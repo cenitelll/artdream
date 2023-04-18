@@ -32,7 +32,7 @@ gem 'devise'
 gem 'bootstrap', '~> 5.2', '>= 5.2.3'
 gem 'jquery-rails'
 
-# gem 'masonry-rails'
+gem 'masonry-rails'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"

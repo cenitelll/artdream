@@ -35,9 +35,9 @@
           <span><%= @pin.user.username %></span>
         </article>
         <div class="thumb">
-          <% if @pin.pin_image.attached? %>
+          <%# <% if @pin.pin_image.attached? %>
             <%= image_tag(@pin.pin_image, width:"100%") %>
-          <% end %>
+          <%# <% end %>
         </div>
         <article>
           <% if @pin.user == current_user %>

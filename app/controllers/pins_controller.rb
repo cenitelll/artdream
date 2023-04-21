@@ -5,7 +5,15 @@ class PinsController < ApplicationController
 
   # GET /pins or /pins.json
   def index
-    @pins = Pin.all
+    # @pins = Pin.all
+    @pagy, @pins = pagy_countless(Pin.order(created_at: :desc), items: 5)
+    respond_to do |format|
+      format.html # GET
+      format.turbo_stream # POST
+    end
+    # if params[:page]
+    #   render "scrollable_list"
+    # end
   end
 
   # GET /pins/1 or /pins/1.json

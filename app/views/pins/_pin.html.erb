@@ -7,3 +7,17 @@
     <%# <%= image_tag(pin.pin_image, style:"") %>
   <%# <% end %>
 <%# </div> %>
+
+ <%= link_to pin do %>
+    <div class="pin_img">
+      <%= image_tag(pin.pin_image, class:"img-responsive", width: '100%') %>
+        <div class="pin_user_content">
+          <p><%= pin.user.username %></p>
+        </div>
+        <div class="pin_content">
+          <p><%= pin.description%></p>
+        </div>
+
+    </div>
+<%# <%= link_to "Show this pin", pin%>
+  <% end %>

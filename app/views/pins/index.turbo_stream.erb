@@ -1,0 +1,9 @@
+<%= turbo_stream.append :pins_page_next do %>
+   <%= render @pins %>
+<% end %>
+
+<%# if @pagy.next.present? %>
+<%= turbo_stream.replace :pagination do %>
+    <%= turbo_frame_tag :pagination, loading: :lazy, src: pins_path(page: @pagy.next, format: :turbo_stream) %>
+<% end %>
+<%# end %>
